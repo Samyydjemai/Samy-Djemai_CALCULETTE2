@@ -1,0 +1,91 @@
+﻿<Window x:Class="Samy_Djemai_CALCULETTE.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Samy_Djemai_CALCULETTE"
+        mc:Ignorable="d"
+        Title="Calculette" Height="600" Width="800"
+        Background="Black">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.Resources>
+
+
+            <!-- Defini un style pour le Button-->
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="Background" Value="Gray"/>
+                <Setter Property="FontSize" Value="25"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Style.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="15"/>
+                    </Style>
+                </Style.Resources>
+            </Style>
+
+            <Style x:Key="MonStyle" TargetType="{x:Type Control}">
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="Background" Value="Orange"/>
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Style.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Style.Resources>
+            </Style>
+
+        </Grid.Resources>
+
+        <TextBox Grid.Row="0" Grid.ColumnSpan="4" Name="TB_Display" PreviewTextInput="TB_Display_PreviewTextInput" Background="Black" FontSize="40" Foreground="White" BorderBrush="Transparent" ></TextBox>
+
+        <!-- Row1-->
+        <Button Grid.Row="1" Grid.Column="0" Name="Bouton_1" Content="1" Click="Bouton_Chiffre_Click"/>
+        <Button Grid.Row="1" Grid.Column="1" Name="Bouton_2" Content="2" Click="Bouton_Chiffre_Click"/>
+        <Button Grid.Row="1" Grid.Column="2" Name="Bouton_3" Content="3" Click="Bouton_Chiffre_Click"/>
+        <Button Grid.Row="1" Grid.Column="3" Name="Bouton_Plus" Style="{StaticResource MonStyle}" Content="+" Click="Bouton_Plus_Click"/>
+        <!-- Row2-->
+        <Button Grid.Row="2" Grid.Column="0" Name="Bouton_4" Content="4" Click="Bouton_Chiffre_Click"/>
+        <Button Grid.Row="2" Grid.Column="1" Name="Bouton_5" Content="5" Click="Bouton_Chiffre_Click"/>
+        <Button Grid.Row="2" Grid.Column="2" Name="Bouton_6" Content="6" Click="Bouton_Chiffre_Click"/>
+        <Button Grid.Row="2" Grid.Column="3" Name="Bouton_Moins" Style="{StaticResource MonStyle}" Content="-" Click="Bouton_Moins_Click"/>
+        <!-- Row3-->
+        <Button Grid.Row="3" Grid.Column="0" Name="Bouton_7" Content="7" Click="Bouton_Chiffre_Click"/>
+        <Button Grid.Row="3" Grid.Column="1" Name="Bouton_8" Content="8" Click="Bouton_Chiffre_Click"/>
+        <Button Grid.Row="3" Grid.Column="2" Name="Bouton_9" Content="9" Click="Bouton_Chiffre_Click"/>
+        <Button Grid.Row="3" Grid.Column="3" Name="Bouton_Fois" Style="{StaticResource MonStyle}" Content="*" Click="Bouton_Fois_Click"/>
+        <!-- Row4-->
+        <Button Grid.Row="4" Grid.Column="0" Name="Bouton_Clear" Content="CLEAR" Click="Bouton_Clear_Click" Background="#FF785A"/>
+        <Button Grid.Row="4" Grid.Column="1" Name="Bouton_0" Content="0" Click="Bouton_Chiffre_Click"/>
+        <Button Grid.Row="4" Grid.Column="2" Name="Bouton_Divise" Content="/" Click="Bouton_Divise_Click"/>
+        <Button Grid.Row="4" Grid.Column="3" Name="Bouton_Egal" Style="{StaticResource MonStyle}" Content="=" Click="Bouton_Egal_Click_1"/>
+        <!-- Row5-->
+        <Button Grid.Row="5" Grid.Column="0" Name="Bouton_pi" Content="π" Click="Bouton_pi_Click" Background="#FFAA5A"/>
+        <Button Grid.Row="5" Grid.Column="1" Name="Bouton_carre" Content="²" Click="Bouton_carre_Click" Background="#FFAA5A"/>
+        <Button Grid.Row="5" Grid.Column="2" Name="Bouton_exposant" Content="e" Click="Bouton_exposant_Click" Background="#FFAA5A"/>
+        <Button Grid.Row="5" Grid.Column="3" Name="Bouton_virg" Style="{StaticResource MonStyle}" Content= "," Click="Bouton_virg_Click" Background="#FFAA5A"/>
+
+
+
+    </Grid>
+
+
+</Window>
